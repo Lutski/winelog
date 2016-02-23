@@ -4,7 +4,7 @@ class WinesController < ApplicationController
   before_action :wine_post_owner, only: [:edit, :update, :destroy]
 
   def index
-    @wines = Wine.all
+    @wines = Wine.all.order("created_at DESC")
   end
 
   def recent
@@ -15,6 +15,12 @@ class WinesController < ApplicationController
   def oldest
     @wines = Wine.oldest
     render action: :index
+  end
+
+  def my_library
+    if !current_user.nil?
+      @wines = current_user.wines
+    end
   end
 
   def show
@@ -53,7 +59,7 @@ class WinesController < ApplicationController
   private
 
   def wine_params
-      params.require(:wine).permit(:title, :vintage, :brand, :description, :extracomments, :image)
+      params.require(:wine).permit(:title, :vintage, :brand, :description, :extracomments, :image, :country, :region, :grape, :rating)
   end
 
   def find_wine

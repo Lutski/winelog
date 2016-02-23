@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :wines do
     collection do
+      # Scopes
       get :recent
       # get :popular
       get :oldest
+
+      # My library
+      get :my_library
     end
   end
 

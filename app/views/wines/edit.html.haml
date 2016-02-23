@@ -3,9 +3,13 @@
 = form_for @wine, html: { multipart: true } do |wine|
   = wine.file_field :image
   = wine.text_field :title, placeholder: "title"
-  = wine.date_select :vintage, { discard_day: true, discard_month: true, start_year: 1600, end_year: Time.now.year + 1}
   = wine.text_field :brand, placeholder: "brand"
+  = wine.text_field :country, placeholder: "country"
+  = wine.text_field :region, placeholder: "region"
+  = wine.text_area :grape, placeholder: "grape"
+  = wine.date_select :vintage, { discard_day: true, discard_month: true, start_year: 1600, end_year: Time.now.year + 1}
   = wine.text_area :description, placeholder: "Description"
   = wine.text_area :extracomments, placeholder: "Extra comments/thoughts"
+  = wine.text_field :rating
 
   = wine.submit
