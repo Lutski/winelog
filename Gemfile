@@ -8,7 +8,8 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '>= 2.0.0' # If using paperclip `master` (upcoming v5.0)
+
 
 
 
