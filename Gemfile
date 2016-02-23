@@ -8,7 +8,7 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 
 
