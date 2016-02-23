@@ -1,21 +1,3 @@
--# - @wines.each do |wine|
--#   %h1= link_to wine.title, wine
-
--# .all_wines
--#   .grid
--#     - @wines.each do |wine|
--#       .grid__col.grid__col--1-of-4.col--push-1-of-4
--#         .specific_wine
--#           -# %img{:src => "http://howng.com/wp-content/uploads/2016/01/aogwnng46h9iv2kergow-1-1.jpg", :alt => ""}/
--#           .numse
--#             = image_tag wine.image.url(:medium)
--#           .wine_info
--#             %h1= wine.title
--#             %hr
--#             %p
--#               %b Description:
--#               = wine.description
-
 .all_wines.transitions-enabled
   - @wines.each do |wine|
     .specific_wine
@@ -27,23 +9,3 @@
         %p
           %b Description:
           = wine.description
-
-      -# .grid__col.grid__col--1-of-4.col--push-1-of-4
-      -#   .specific_wine
-      -#     %img{:src => "http://howng.com/wp-content/uploads/2016/01/aogwnng46h9iv2kergow-1-1.jpg", :alt => ""}/
-      -#     .wine_info
-      -#       %h1 Ugaba - Syrah
-      -#       %hr
-      -#       %p
-      -#         %b Description:
-      -#         bladk aslkasd ajasd asdkj  asdnas dnmnas dnamns dnasdmnasd sjad kah hkajsjk asdjk
-      -#
-      -# .grid__col.grid__col--1-of-4.col--push-1-of-4
-      -#   .specific_wine
-      -#     %img{:src => "http://howng.com/wp-content/uploads/2016/01/aogwnng46h9iv2kergow-1-1.jpg", :alt => ""}/
-      -#     .wine_info
-      -#       %h1 Ugaba - Syrah
-      -#       %hr
-      -#       %p
-      -#         %b Description:
-      -#         bladk aslkasd ajasd asdkj  asdnas dnmnas dnamns dnasdmnasd sjad kah hkajsjk asdjk
