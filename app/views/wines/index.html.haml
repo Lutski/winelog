@@ -1,3 +1,17 @@
+.ordering
+  %ul
+    %li
+      = link_to "Recent", recent_wines_path
+    %li
+      %a{:href => "/"} Popular
+    %li
+      = link_to "Oldest", oldest_wines_path
+    %li
+      %a{:href => "/"}
+      = icon('search')
+
+  %hr
+
 .all_wines.transitions-enabled
   - @wines.each do |wine|
     .specific_wine

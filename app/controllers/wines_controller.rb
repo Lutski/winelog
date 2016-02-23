@@ -1,8 +1,20 @@
 class WinesController < ApplicationController
-  before_action :find_wine, only: [:show, :edit, :update, :destroy]
+  before_action :find_wine, only: [:show, :edit, :update, :destroy, :wine_post_owner]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :wine_post_owner, only: [:edit, :update, :destroy]
 
   def index
     @wines = Wine.all
+  end
+
+  def recent
+    @wines = Wine.recent
+    render action: :index
+  end
+
+  def oldest
+    @wines = Wine.oldest
+    render action: :index
   end
 
   def show
@@ -46,5 +58,12 @@ class WinesController < ApplicationController
 
   def find_wine
     @wine = Wine.find(params[:id])
+  end
+
+  def wine_post_owner
+    unless @wine.user_id == current_user.id
+      flash[:notice] = "You shall not pass!"
+      redirect_to @wine
+    end
   end
 end

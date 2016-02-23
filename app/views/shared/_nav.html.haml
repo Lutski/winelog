@@ -1,7 +1,7 @@
 %nav
   %ul
     %li
-      %a{:href => "/"} Discover
+      = link_to "Discover", wines_path
 
     - if user_signed_in?
       %li
@@ -9,7 +9,7 @@
       %li
         %a{:href => "/"} My library
       %li
-        %a{:href => "/"} Profile
+        = link_to "Profile", edit_user_registration_path
     - else
       %li
         = link_to "Sign in", new_user_session_path

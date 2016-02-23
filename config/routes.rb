@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :wines
+  resources :wines do
+    collection do
+      get :recent
+      # get :popular
+      get :oldest
+    end
+  end
 
   root 'wines#index'
 
