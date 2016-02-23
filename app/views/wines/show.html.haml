@@ -1,0 +1,9 @@
+= image_tag @wine.image.url(:medium)
+%h1= @wine.title
+%p= @wine.vintage.year
+%p
+  %b Description:
+  = @wine.description
+%p
+  %b Extra comments:
+  = @wine.extracomments
