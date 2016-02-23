@@ -4,7 +4,7 @@
       .numse
         = image_tag wine.image.url(:medium)
       .wine_info
-        %h1= wine.title
+        %h1= link_to wine.title, wine
         %hr
         %p
           %b Description:

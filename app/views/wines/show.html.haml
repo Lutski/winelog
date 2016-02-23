@@ -1,4 +1,8 @@
 = image_tag @wine.image.url(:medium)
+
+= link_to "Edit", edit_wine_path(@wine)
+= link_to "Delete", wine_path(@wine), method: :delete, data: { confirm: "Are you sure?" }
+
 %h1= @wine.title
 %p= @wine.vintage.year
 %p
