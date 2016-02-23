@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'masonry-rails', '~> 0.2.4'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'jquery-turbolinks'
 

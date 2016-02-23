@@ -9,11 +9,11 @@ class WinesController < ApplicationController
   end
 
   def new
-    @wine = Wine.new
+    @wine = current_user.wines.build
   end
 
   def create
-    @wine = Wine.create(wine_params)
+    @wine = current_user.wines.build(wine_params)
 
     if @wine.save
       redirect_to @wine
