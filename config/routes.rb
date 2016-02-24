@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :wines do
     collection do
       # Scopes
@@ -9,6 +10,10 @@ Rails.application.routes.draw do
 
       # My library
       get :my_library
+    end
+
+    member do
+      put "like", to: "wines#upvote"
     end
   end
 

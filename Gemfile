@@ -10,6 +10,7 @@ gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
 gem 'aws-sdk', '~> 2.2', '>= 2.2.18'
 
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 

@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :find_wine, only: [:show, :edit, :update, :destroy, :wine_post_owner]
+  before_action :find_wine, only: [:show, :edit, :update, :destroy, :wine_post_owner, :upvote]
   before_action :authenticate_user!, except: [:index, :show, :recent, :oldest]
   before_action :wine_post_owner, only: [:edit, :update, :destroy]
 
@@ -54,6 +54,11 @@ class WinesController < ApplicationController
   def destroy
     @wine.destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @wine.upvote_by current_user
+    redirect_to :back
   end
 
   private

@@ -1,12 +1,11 @@
-- if current_user == @wine.user
-  = link_to "Edit", edit_wine_path(@wine)
-  = link_to "Delete", wine_path(@wine), method: :delete, data: { confirm: "Are you sure?" }
-
 .card-show
   .centered-items
     = image_tag @wine.image.url(:medium)
     %h1= @wine.title
     .item{:id => "stars_#{@wine.id}"}
+    - if current_user == @wine.user
+      = link_to "Edit", edit_wine_path(@wine)
+      = link_to "Delete", wine_path(@wine), method: :delete, data: { confirm: "Are you sure?" }
 
   .wine-info-show
   %p= @wine.vintage.year
@@ -16,6 +15,10 @@
   %p
     %b Extra comments:
     = @wine.extracomments
+
+  = link_to like_wine_path(@wine), method: :put do
+    = icon('thumbs-up')
+    = @wine.get_upvotes.size
 
 
 
