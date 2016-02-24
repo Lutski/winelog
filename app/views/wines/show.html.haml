@@ -8,7 +8,18 @@
       = link_to "Delete", wine_path(@wine), method: :delete, data: { confirm: "Are you sure?" }
 
   .wine-info-show
-  %p= @wine.vintage.year
+  %p
+    %b Vintage:
+    = @wine.vintage.year
+  %p
+    %b Country:
+    = @wine.country
+  %p
+    %b Region:
+    = @wine.region
+  %p
+    %b Grapes:
+    = @wine.grape
   %p
     %b Description:
     = @wine.description

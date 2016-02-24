@@ -21,6 +21,7 @@
       = wine.text_area :grape, placeholder: "Which grapes were used?"
 
     .field
+      = wine.label :vintage
       = wine.date_select :vintage, { discard_day: true, discard_month: true, start_year: 1600, end_year: Time.now.year + 1}
 
     .field
