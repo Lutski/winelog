@@ -1,20 +1,21 @@
-= image_tag @wine.image.url(:medium)
-
 - if current_user == @wine.user
   = link_to "Edit", edit_wine_path(@wine)
   = link_to "Delete", wine_path(@wine), method: :delete, data: { confirm: "Are you sure?" }
 
+.card-show
+  .centered-items
+    = image_tag @wine.image.url(:medium)
+    %h1= @wine.title
+    .item{:id => "stars_#{@wine.id}"}
 
-%h1= @wine.title
-%p= @wine.vintage.year
-%p
-  %b Description:
-  = @wine.description
-%p
-  %b Extra comments:
-  = @wine.extracomments
-
-.item{:id => "stars_#{@wine.id}"}
+  .wine-info-show
+  %p= @wine.vintage.year
+  %p
+    %b Description:
+    = @wine.description
+  %p
+    %b Extra comments:
+    = @wine.extracomments
 
 
 

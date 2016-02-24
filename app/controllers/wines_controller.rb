@@ -1,6 +1,6 @@
 class WinesController < ApplicationController
   before_action :find_wine, only: [:show, :edit, :update, :destroy, :wine_post_owner]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :recent, :oldest]
   before_action :wine_post_owner, only: [:edit, :update, :destroy]
 
   def index
