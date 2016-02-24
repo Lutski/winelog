@@ -24,4 +24,13 @@
         %hr
         %p
           %b Description:
-          = wine.description
+          = truncate(wine.description, length: 200)
+        .rating{:id => "stars_#{wine.id}"}
+        %br
+
+        :javascript
+            $('#stars_#{wine.id}').raty({
+              path: '/assets',
+              readOnly: true,
+              score: #{wine.rating}
+            });
