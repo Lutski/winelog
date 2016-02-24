@@ -26,6 +26,10 @@
   %p
     %b Extra comments:
     = @wine.extracomments
+  %p
+    %b Created by:
+    = @wine.user.email
+
 
   = link_to like_wine_path(@wine), method: :put do
     = icon('thumbs-up')
