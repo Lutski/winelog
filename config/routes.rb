@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :wines do
+    resources :comments
+
     collection do
       # Scopes
       get :recent

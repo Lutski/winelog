@@ -24,6 +24,7 @@ class WinesController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(wine_id: @wine).order("created_at DESC")
   end
 
   def new
